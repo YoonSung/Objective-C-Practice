@@ -30,14 +30,19 @@
     denominator = d;
 }
 
--(void) add:(Fraction *)f
+-(Fraction *) add:(Fraction *)f
 {
     //두 분수를 더하려면:
     // a/b + c/d = ((a*d) + (b*c )) / (b * d)
-    numerator = numerator * f.denominator + denominator * f.numerator;
-    denominator = denominator * f.denominator;
     
-    [self reduce];
+    //result에 계산 결과가 저장된다.
+    Fraction *result = [[Fraction alloc] init];
+    result.numerator = numerator * f.denominator + denominator * f.numerator;
+    result.denominator = denominator * f.denominator;
+    
+    [result reduce];
+    
+    return result;
 }
 
 -(void) reduce
