@@ -14,11 +14,17 @@ int main(int argc, const char * argv[]) {
         Fraction* aFraction = [[Fraction alloc] init];
         Fraction* bFraction = [[Fraction alloc] init];
         
-        [aFraction setTo:100 over:200];
-        [aFraction print];
+        [aFraction setTo:1 over:4];
         
-        [bFraction setTo:1 over:3];
+        [bFraction setTo:1 over:2];
+        
+        [aFraction print];
+        NSLog(@"+");
         [bFraction print];
+        NSLog(@"=");
+        
+        [aFraction add:bFraction];
+        [aFraction print];
     }
     return 0;
 }

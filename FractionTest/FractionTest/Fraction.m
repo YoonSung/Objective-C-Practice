@@ -30,5 +30,13 @@
     denominator = d;
 }
 
+-(void) add:(Fraction *)f
+{
+    //두 분수를 더하려면:
+    // a/b + c/d = ((a*d) + (b*c )) / (b * d)
+    numerator = numerator * f.denominator + denominator * f.numerator;
+    denominator = denominator * f.denominator;
+}
+
 
 @end
