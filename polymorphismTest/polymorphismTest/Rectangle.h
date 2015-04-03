@@ -1,5 +1,5 @@
 //
-//  ClassB.h
+//  Rectangle.h
 //  polymorphismTest
 //
 //  Created by yoon on 2015. 4. 3..
@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ClassA.h"
 
-@interface ClassB : ClassA
--(void) printVar;
+@interface Rectangle : NSObject
+
+@property int width, height;
+
+-(int) area;
+-(int) perimeter;
+-(void) setWidth: (int)w andHeight: (int)h;
 @end

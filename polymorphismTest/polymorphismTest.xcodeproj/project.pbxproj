@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		679A7B021ACE74780039D4CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7B011ACE74780039D4CF /* main.m */; };
-		679A7B0A1ACE74990039D4CF /* ClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7B091ACE74990039D4CF /* ClassA.m */; };
-		679A7B0D1ACE74A60039D4CF /* ClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7B0C1ACE74A60039D4CF /* ClassB.m */; };
+		679A7B101ACE75F30039D4CF /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7B0F1ACE75F30039D4CF /* Rectangle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,10 +26,8 @@
 /* Begin PBXFileReference section */
 		679A7AFE1ACE74780039D4CF /* polymorphismTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = polymorphismTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		679A7B011ACE74780039D4CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		679A7B081ACE74990039D4CF /* ClassA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassA.h; sourceTree = "<group>"; };
-		679A7B091ACE74990039D4CF /* ClassA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassA.m; sourceTree = "<group>"; };
-		679A7B0B1ACE74A60039D4CF /* ClassB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassB.h; sourceTree = "<group>"; };
-		679A7B0C1ACE74A60039D4CF /* ClassB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassB.m; sourceTree = "<group>"; };
+		679A7B0E1ACE75F30039D4CF /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		679A7B0F1ACE75F30039D4CF /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				679A7B011ACE74780039D4CF /* main.m */,
-				679A7B0B1ACE74A60039D4CF /* ClassB.h */,
-				679A7B0C1ACE74A60039D4CF /* ClassB.m */,
-				679A7B081ACE74990039D4CF /* ClassA.h */,
-				679A7B091ACE74990039D4CF /* ClassA.m */,
+				679A7B0E1ACE75F30039D4CF /* Rectangle.h */,
+				679A7B0F1ACE75F30039D4CF /* Rectangle.m */,
 			);
 			path = polymorphismTest;
 			sourceTree = "<group>";
@@ -128,9 +123,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				679A7B0D1ACE74A60039D4CF /* ClassB.m in Sources */,
-				679A7B0A1ACE74990039D4CF /* ClassA.m in Sources */,
 				679A7B021ACE74780039D4CF /* main.m in Sources */,
+				679A7B101ACE75F30039D4CF /* Rectangle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

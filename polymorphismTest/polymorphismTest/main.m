@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ClassB.h"
+#import "Rectangle.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        ClassB* b = [[ClassB alloc] init];
-        [b initVar];
-        [b printVar];
+        Rectangle * myRect = [[Rectangle alloc] init];
+        [myRect setWidth:5 andHeight:8];
+        
+        NSLog(@"Rectable: w = %i, h = %i", myRect.width, myRect.height);
+        NSLog(@"Area = %i, Perimeter = %i", [myRect area], [myRect perimeter]);
     }
     return 0;
 }
