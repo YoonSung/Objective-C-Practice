@@ -10,6 +10,7 @@
 		679A7B021ACE74780039D4CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7B011ACE74780039D4CF /* main.m */; };
 		679A7B101ACE75F30039D4CF /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7B0F1ACE75F30039D4CF /* Rectangle.m */; };
 		679A7B131ACE77FF0039D4CF /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7B121ACE77FF0039D4CF /* Square.m */; };
+		679A7B161ACE79C40039D4CF /* XYPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7B151ACE79C40039D4CF /* XYPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		679A7B0F1ACE75F30039D4CF /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
 		679A7B111ACE77FF0039D4CF /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
 		679A7B121ACE77FF0039D4CF /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Square.m; sourceTree = "<group>"; };
+		679A7B141ACE79C40039D4CF /* XYPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPoint.h; sourceTree = "<group>"; };
+		679A7B151ACE79C40039D4CF /* XYPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 				679A7B011ACE74780039D4CF /* main.m */,
 				679A7B111ACE77FF0039D4CF /* Square.h */,
 				679A7B121ACE77FF0039D4CF /* Square.m */,
+				679A7B141ACE79C40039D4CF /* XYPoint.h */,
+				679A7B151ACE79C40039D4CF /* XYPoint.m */,
 				679A7B0E1ACE75F30039D4CF /* Rectangle.h */,
 				679A7B0F1ACE75F30039D4CF /* Rectangle.m */,
 			);
@@ -131,6 +136,7 @@
 				679A7B131ACE77FF0039D4CF /* Square.m in Sources */,
 				679A7B021ACE74780039D4CF /* main.m in Sources */,
 				679A7B101ACE75F30039D4CF /* Rectangle.m in Sources */,
+				679A7B161ACE79C40039D4CF /* XYPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,10 +5,13 @@
 //  Created by yoon on 2015. 4. 3..
 //  Copyright (c) 2015년 architree. All rights reserved.
 //
-
 #import "Rectangle.h"
 
 @implementation Rectangle
+{
+    XYPoint *origin;
+}
+
 @synthesize width, height;
 
 -(int) area
@@ -25,6 +28,16 @@
 {
     width = w;
     height = h;
+}
+
+-(void)setOrigin:(XYPoint *)pt
+{
+    origin = pt;
+}
+
+-(XYPoint *)origin
+{
+    return origin;
 }
 
 @end
