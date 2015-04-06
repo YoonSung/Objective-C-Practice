@@ -12,25 +12,10 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        Fraction *a, *b;
         
-        //이전방식 = 정적바인딩
-        //현재방식 = 동적바인딩 (런타임에 확인, id)
+        a = [[Fraction alloc] initWith: 1 over: 3];
         
-        //* 가 없으며, .연산자를 사용할 시 컴파일 에러발생
-        id dataValue;
-        Fraction* f1 = [[Fraction alloc] init];
-        Complex* c1 = [[Complex alloc] init];
-        
-        [f1 setTo:2 over:5];
-        [c1 setReal:10.0 andImagenary:2.5];
-        
-        //dataValue에 분수를 대입한다
-        dataValue = f1;
-        [dataValue print];
-        
-        //dataValue에 복소수를 대입한다.
-        dataValue = c1;
-        [dataValue print];
     }
     return 0;
 }
