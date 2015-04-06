@@ -16,4 +16,5 @@
 -(void) setTo: (int)n over: (int)d;
 -(Fraction *) add: (Fraction *) f;
 -(void) reduce;
+-(id) initWith: (int)n Over: (int)d;
 @end
