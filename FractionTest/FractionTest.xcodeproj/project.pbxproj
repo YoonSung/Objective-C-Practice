@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		672E0B0A1AD21F6700DD570D /* Complex.m in Sources */ = {isa = PBXBuildFile; fileRef = 672E0B091AD21F6700DD570D /* Complex.m */; };
+		672E0B0D1AD266D800DD570D /* Fraction+MathOps.m in Sources */ = {isa = PBXBuildFile; fileRef = 672E0B0C1AD266D800DD570D /* Fraction+MathOps.m */; };
 		679A7AEC1ACE4E540039D4CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7AEB1ACE4E540039D4CF /* main.m */; };
 		679A7AF41ACE4E790039D4CF /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 679A7AF31ACE4E790039D4CF /* Fraction.m */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		672E0B081AD21F6700DD570D /* Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
 		672E0B091AD21F6700DD570D /* Complex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Complex.m; sourceTree = "<group>"; };
+		672E0B0B1AD266D800DD570D /* Fraction+MathOps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Fraction+MathOps.h"; sourceTree = "<group>"; };
+		672E0B0C1AD266D800DD570D /* Fraction+MathOps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Fraction+MathOps.m"; sourceTree = "<group>"; };
 		679A7AE81ACE4E540039D4CF /* FractionTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FractionTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		679A7AEB1ACE4E540039D4CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		679A7AF21ACE4E790039D4CF /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				679A7AF31ACE4E790039D4CF /* Fraction.m */,
 				672E0B081AD21F6700DD570D /* Complex.h */,
 				672E0B091AD21F6700DD570D /* Complex.m */,
+				672E0B0B1AD266D800DD570D /* Fraction+MathOps.h */,
+				672E0B0C1AD266D800DD570D /* Fraction+MathOps.m */,
 			);
 			path = FractionTest;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				672E0B0D1AD266D800DD570D /* Fraction+MathOps.m in Sources */,
 				679A7AEC1ACE4E540039D4CF /* main.m in Sources */,
 				672E0B0A1AD21F6700DD570D /* Complex.m in Sources */,
 				679A7AF41ACE4E790039D4CF /* Fraction.m in Sources */,
