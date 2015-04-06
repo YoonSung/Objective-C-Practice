@@ -12,35 +12,25 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+        //이전방식 = 정적바인딩
+        //현재방식 = 동적바인딩 (런타임에 확인, id)
+        
+        //* 가 없으며, .연산자를 사용할 시 컴파일 에러발생
+        id dataValue;
         Fraction* f1 = [[Fraction alloc] init];
-        Fraction* f2 = [[Fraction alloc] init];
-        Fraction* fracResult;
-        
         Complex* c1 = [[Complex alloc] init];
-        Complex* c2 = [[Complex alloc] init];
-        Complex* comResult;
         
-        [f1 setTo:1 over:10];
-        [f2 setTo:2 over:15];
-        [c1 setReal:18.0 andImagenary:2.5];
-        [c2 setReal:-5.0 andImagenary:3.2];
+        [f1 setTo:2 over:5];
+        [c1 setReal:10.0 andImagenary:2.5];
         
-        //두개의 복소수를 더하고 결과를 표시한다
-        [c1 print];
-        NSLog(@"              +");
-        [c2 print];
-        NSLog(@"--------------");
-        comResult = [c1 add: c2];
-        [comResult print];
-        NSLog(@"\n");
+        //dataValue에 분수를 대입한다
+        dataValue = f1;
+        [dataValue print];
         
-        //두개의 분수를 더하고 결과를 표시한다.
-        [f1 print];
-        NSLog(@"  +");
-        [f2 print];
-        NSLog(@"-------");
-        fracResult = [f1 add:f2];
-        [fracResult print];
+        //dataValue에 복소수를 대입한다.
+        dataValue = c1;
+        [dataValue print];
     }
     return 0;
 }
