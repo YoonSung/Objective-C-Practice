@@ -8,6 +8,12 @@
 
 #import "Fraction.h"
 
+//reduce 메서드를 private으로 만든다.
+@interface Fraction ()
+-(void) reduce;
+@end
+
+//Fraction 클래스의 public 메서드를 정의한다.
 @implementation Fraction
 @synthesize numerator, denominator;
 

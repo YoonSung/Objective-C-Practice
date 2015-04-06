@@ -14,6 +14,5 @@
 -(void) print;
 -(double) convertToNum;
 -(void) setTo: (int)n over: (int)d;
--(void) reduce;
 -(id) initWith: (int)n Over: (int)d;
 @end
