@@ -8,24 +8,39 @@
 
 #import <Foundation/Foundation.h>
 #import "Fraction.h"
+#import "Complex.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Fraction* aFraction = [[Fraction alloc] init];
-        Fraction* bFraction = [[Fraction alloc] init];
-        Fraction* resultFraction;
+        Fraction* f1 = [[Fraction alloc] init];
+        Fraction* f2 = [[Fraction alloc] init];
+        Fraction* fracResult;
         
-        [aFraction setTo:1 over:4];
+        Complex* c1 = [[Complex alloc] init];
+        Complex* c2 = [[Complex alloc] init];
+        Complex* comResult;
         
-        [bFraction setTo:1 over:2];
+        [f1 setTo:1 over:10];
+        [f2 setTo:2 over:15];
+        [c1 setReal:18.0 andImagenary:2.5];
+        [c2 setReal:-5.0 andImagenary:3.2];
         
-        [aFraction print];
-        NSLog(@"+");
-        [bFraction print];
-        NSLog(@"=");
+        //두개의 복소수를 더하고 결과를 표시한다
+        [c1 print];
+        NSLog(@"              +");
+        [c2 print];
+        NSLog(@"--------------");
+        comResult = [c1 add: c2];
+        [comResult print];
+        NSLog(@"\n");
         
-        resultFraction = [aFraction add:bFraction];
-        [resultFraction print];
+        //두개의 분수를 더하고 결과를 표시한다.
+        [f1 print];
+        NSLog(@"  +");
+        [f2 print];
+        NSLog(@"-------");
+        fracResult = [f1 add:f2];
+        [fracResult print];
     }
     return 0;
 }
