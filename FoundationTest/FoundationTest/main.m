@@ -10,81 +10,43 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        //***************** 기본 스트링 작업 - 수정 가능한 스트링
-        NSString *str1 = @"This is string A";
-        NSString *search, *replace;
-        NSMutableString *mstr;
-        NSRange substr;
+        /*
+        배열도 수정가능한 배열과 불간으한 배열이 있다.
+         NSArray, NSMutableArray. 후자가 전자를 상속하기 때문에 그 메서드들도 상속받는다.
+        */
         
-        //수정 불가능한 스트링으로부터 수정 가능한 스트링 만들기
-        mstr = [NSMutableString stringWithString:str1];
-        NSLog(@"%@", mstr);
-      
-        //문자 집어넣기, MutableString이기 때문에 Immutable때와 다르게 반환값이 존재하지 않는다.
-        [mstr insertString:@" mutable" atIndex:7];
-        NSLog(@"%@", mstr);
+        //매월의 이름을 담고 있는 배열
+        //메서드에서 받는 인수의 개수가 변할 수 있다. 목록이 끝났음을 표시하려면 마지막 값으로 nil을 지정해 주어야 하는데, 이 값은 배열에 실제로 저장되지는 않는다.
+        //objective-c 는 다음과 같은 문법으로도 NSArray를 설정할 수 있게 해준다. @[ele1, ele2, ...elemn];
+        //이 경우에는 배열 끝에 nil을 넣지 않는다.
+        NSArray *monthNames = [NSArray arrayWithObjects:@"January", @"February", @"March", @"April", @"May", @"June", @"July", @"August", @"September", @"October", @"November", @"December", nil];
         
-        //맨 뒤에 넣는 경우 병합하기
-        [mstr insertString:@" and string B" atIndex:[mstr length]];
-        NSLog(@"%@", mstr);
+        //배열 안의 모든 원소를 나열한다.
+        NSLog(@"Month   Name");
+        NSLog(@"=====   ====");
         
-        //appendString 직접 사용
-        [mstr appendString:@" and string C"];
-        
-        //범위로 주어진 서브스트링 지우기
-        //index 16에서부터 13개 진행까지 지우기 (16에서 시작해서 13개 지우기)
-        [mstr deleteCharactersInRange:NSMakeRange(16, 13)];
-        NSLog(@"%@", mstr);
-        
-        //스트링 범위 찾아 삭제하기
-        substr = [mstr rangeOfString:@"string B and "];
-        
-        if (substr.location != NSNotFound)
-        {
-            [mstr deleteCharactersInRange:substr];
-            NSLog(@"%@", mstr);
-        }
-        
-        //수정 가능한 스트링 직접 설정하기
-        [mstr setString:@"This is string A"];
-        NSLog(@"%@", mstr);
-        
-        //특정 범위를 다른 스트링으로 대치하기
-        [mstr replaceCharactersInRange:NSMakeRange(8, 8) withString:@"a mutable string"];
-        NSLog(@"%@", mstr);
-        
-        //검색과 대치
-        search = @"This is";
-        replace = @"An example of";
-        
-        substr = [mstr rangeOfString:search];
-        
-        if (substr.location != NSNotFound)
-        {
-            [mstr replaceCharactersInRange:substr withString:replace];
-            NSLog(@"%@", mstr);
+        for (int i = 0; i < 12; ++i) {
+            NSLog(@" %2i      %@", i+1, [monthNames objectAtIndex:i]);
         }
         
         
-        //모두 찾아 대치하기, NSMutableString 클래스는 replaceOccurencesOfString:withString:options:range 메서드를 이용해 검색된 결과를 모두 바꿀 수 있다.
-        search = @"a";
-        replace = @"X";
-        
-        substr = [mstr rangeOfString:search];
-        
-        while (substr.location != NSNotFound) {
-            [mstr replaceCharactersInRange:substr withString:replace];
-            substr = [mstr rangeOfString:search];
-        }
-        
-        NSLog(@"%@", mstr);
         
         
         
-        search = @"X";
-        replace = @"a";
-        [mstr replaceOccurrencesOfString:search withString:replace options:nil range:NSMakeRange(0, [mstr length])];
-        NSLog(@"%@", mstr);
+        
+        
+        NSMutableArray *numbers = [NSMutableArray array];
+
+        for (int i=0; i < 10; ++i)
+            numbers[i] = @(i);
+
+        //배열의 항목에 순차적으로 접근하여 값을 표시한다.
+        for (int i=0; i < 10; ++i)
+            NSLog(@"%@", numbers[i]);
+
+        //NSLog가 하나의 %@포맷으로 표시한다.
+        NSLog(@"====== Using a single NSLog");
+        NSLog(@"%@", numbers);
     }
     return 0;
 }
