@@ -10,66 +10,81 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        //***************** 스트링 객체
-        //다음과 같이 문자 스트링을 따옴표로 묶으면 문자 스트링 객체를 생성하게 된다. @"Programming is fun"
-        //NSString 객체는 unichar 문자로 이루어져 있다. unichar 문자는 유니코드 표준에 따른 멀티바이트 문자다.
-        //위의 문자 스트링 상수 객체는 NSConstantString(NSString의 서브클래스, immutable) 클래스에 속한다.
-        
-        NSString * str = @"Programming is fun";
-        NSLog(@"%@", str);
-        
-        //%@는 NSString 뿐만 아니라 다른 객체를 표시하는 데도 사용할 수 있다.
-        NSLog(@"%@", @100);
-        
-        //심지어 %@ 형식 문자를 사용하여 배열, 딕셔너리, 세트에 담긴 전체 내용을 표시할 수 있다.
-        //사실, 직접 만든 클래스에서도 상속받은 description 메서드를 재정의해 주기만 하면 이 포맷 문자로 객체를 표시할 수 있다.
-        //만약 재정의 하지 않으면 NSLog는 클래스 이름과 객체의 메모리 주소를 표시한다.
-        
-        /*
-         수정 가능한 스트링 객체는 NSMutableString에서 처리한다.
-         */
-        
+        //***************** 기본 스트링 작업 - 수정 가능한 스트링
         NSString *str1 = @"This is string A";
-        NSString *str2 = @"This is string B";
-        NSString *res;
-        NSComparisonResult compareResult;
+        NSString *search, *replace;
+        NSMutableString *mstr;
+        NSRange substr;
         
-        //문자 개수 세기
-        NSLog(@"Length of str1 : %lu", [str1 length]);
+        //수정 불가능한 스트링으로부터 수정 가능한 스트링 만들기
+        mstr = [NSMutableString stringWithString:str1];
+        NSLog(@"%@", mstr);
+      
+        //문자 집어넣기, MutableString이기 때문에 Immutable때와 다르게 반환값이 존재하지 않는다.
+        [mstr insertString:@" mutable" atIndex:7];
+        NSLog(@"%@", mstr);
         
-        //스트링 복사하기
-        res = [NSString stringWithString:str1];
-        NSLog(@"copy : %@", res);
+        //맨 뒤에 넣는 경우 병합하기
+        [mstr insertString:@" and string B" atIndex:[mstr length]];
+        NSLog(@"%@", mstr);
         
-        //스트링을 다른 스트링 두에 붙여 복사하기
-        str2 = [str1 stringByAppendingString:str2];
-        NSLog(@"Concatentation : %@", str2);
+        //appendString 직접 사용
+        [mstr appendString:@" and string C"];
         
-        //두개의 스트링이 같은지 비교
-        if ([str1 isEqualToString:res] == YES)
-            NSLog(@"str1 == res");
-        else
-            NSLog(@"str1 != res");
+        //범위로 주어진 서브스트링 지우기
+        //index 16에서부터 13개 진행까지 지우기 (16에서 시작해서 13개 지우기)
+        [mstr deleteCharactersInRange:NSMakeRange(16, 13)];
+        NSLog(@"%@", mstr);
         
-        //두 개의 스트링 크기 비교
-        compareResult = [str1 compare: str2];
+        //스트링 범위 찾아 삭제하기
+        substr = [mstr rangeOfString:@"string B and "];
         
-        if (compareResult == NSOrderedAscending)
-            NSLog(@"str1 < str2");
-        else if (compareResult == NSOrderedSame)
-            NSLog(@"str1 == str2");
-        else
-            NSLog(@"str1 > str2");
+        if (substr.location != NSNotFound)
+        {
+            [mstr deleteCharactersInRange:substr];
+            NSLog(@"%@", mstr);
+        }
         
-        //대문자로 변환
-        res = [str1 uppercaseString];
-        NSLog(@"Uppercase conversion : %s", [res UTF8String]);
+        //수정 가능한 스트링 직접 설정하기
+        [mstr setString:@"This is string A"];
+        NSLog(@"%@", mstr);
         
-        //소문자로 변환
-        res = [str1 lowercaseString];
-        NSLog(@"Lowercase conversion : %@", res);
+        //특정 범위를 다른 스트링으로 대치하기
+        [mstr replaceCharactersInRange:NSMakeRange(8, 8) withString:@"a mutable string"];
+        NSLog(@"%@", mstr);
         
-        NSLog(@"Original string : %@", str1);
+        //검색과 대치
+        search = @"This is";
+        replace = @"An example of";
+        
+        substr = [mstr rangeOfString:search];
+        
+        if (substr.location != NSNotFound)
+        {
+            [mstr replaceCharactersInRange:substr withString:replace];
+            NSLog(@"%@", mstr);
+        }
+        
+        
+        //모두 찾아 대치하기, NSMutableString 클래스는 replaceOccurencesOfString:withString:options:range 메서드를 이용해 검색된 결과를 모두 바꿀 수 있다.
+        search = @"a";
+        replace = @"X";
+        
+        substr = [mstr rangeOfString:search];
+        
+        while (substr.location != NSNotFound) {
+            [mstr replaceCharactersInRange:substr withString:replace];
+            substr = [mstr rangeOfString:search];
+        }
+        
+        NSLog(@"%@", mstr);
+        
+        
+        
+        search = @"X";
+        replace = @"a";
+        [mstr replaceOccurrencesOfString:search withString:replace options:nil range:NSMakeRange(0, [mstr length])];
+        NSLog(@"%@", mstr);
     }
     return 0;
 }
