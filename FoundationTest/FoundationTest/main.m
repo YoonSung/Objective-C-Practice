@@ -10,49 +10,32 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        //***************** 리터럴 숫자객체
+        //@표현법을 써서 프로그램 내에서 숫자객체를 생성할 수 있다.
         NSNumber *myNumber, *floatNumber, *intNumber;
-        NSInteger myInt;
-        //***************** 숫자 작업하기
+        NSInteger myInt; //typedef일뿐
+        
         //integer 값
-        intNumber = [NSNumber numberWithInteger:100];
+        intNumber = @100;
         myInt = [intNumber integerValue];
+        NSLog(@"%li", (long) myInt);
         
-        NSLog(@"%li", (long)myInt);
-        
-        //lonh 값
-        myNumber = [NSNumber numberWithLong: 0xabcdef];
+        //long value 값
+        myNumber = @0xabcdefL;
         NSLog(@"%lx", [myNumber longValue]);
         
-        //char 값
-        myNumber = [NSNumber numberWithChar: 'X'];
+        myNumber = @'X';
         NSLog(@"%c", [myNumber charValue]);
         
-        //float 값
-        floatNumber = [NSNumber numberWithFloat:100.00];
+        //float value 값
+        floatNumber = @100.0f;
         NSLog(@"%g", [floatNumber floatValue]);
         
-        //double 값
-        myNumber = [NSNumber numberWithDouble:12345e+15];
-        NSLog(@"%lg", [myNumber doubleValue]);
+        NSInteger start = 1;
+        NSInteger end = 2;
+        NSNumber *center = @((start + end) / 2.0);
         
-        //잘못된 접근
-        NSLog(@"%li", (long) [myNumber integerValue]);
-        
-        //두 숫자가 같은지 비교
-        if ([intNumber isEqualToNumber:floatNumber] == YES)
-            NSLog(@"Numbers are equal");
-        else
-            NSLog(@"Numbers are not equal");
-        
-        //두 숫자의 크기비교
-        if ([intNumber compare: myNumber] == NSOrderedAscending)
-            NSLog(@"First number is less than second");
-        
-        
-        //error, 둘중에 하나만 사용해야 한다. 두개 모두 실행되면, concrete 상수에 값을 할당하려 하기대문에 에러가 발생한다.
-        //NSNumber *testNumber = [[NSNumber alloc] initWithInt:50];
-        //[testNumber initWithInt:1000];
-        
+        NSLog(@"%li", (long) [center integerValue]);
     }
     return 0;
 }
