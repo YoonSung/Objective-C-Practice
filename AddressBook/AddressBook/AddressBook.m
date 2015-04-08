@@ -60,10 +60,21 @@
 
 -(AddressCard *) lookup:(NSString *)theName
 {
-    for (AddressCard * nextCard in book)
-        if ([nextCard.name caseInsensitiveCompare:theName] == NSOrderedSame)
-            return nextCard;
-    return nil;
+    NSUInteger result = [book indexOfObjectPassingTest:
+        ^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+            if ([[obj name] caseInsensitiveCompare:theName] == NSOrderedSame) {
+                return YES; //일치하는 객체를 하나만 발견하면 충분하다.
+            } else {
+                return NO; //계속 찾는다.
+            }
+            
+        }];
+    
+    //일치하는 객체를 찾았는지 확인
+    if (result != NSNotFound) //객체가 하나만 있어야 한다.
+        return book[result];
+    else
+        return nil;
 }
 
 -(void) sort
