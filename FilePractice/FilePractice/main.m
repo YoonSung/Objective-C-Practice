@@ -53,15 +53,37 @@ int main(int argc, const char * argv[]) {
         NSLog(@"File size is %llu bytes", [[attr objectForKey:NSFileSize] unsignedLongLongValue]);
         
         //원본 파일을 삭제한다.
+        /*
         if ([fm removeItemAtPath:fName error:NULL] == NO) {
             NSLog(@"file removal failed");
             return 6;
         }
+        */
         
         NSLog(@"All operations were successful");
         
         //새로 생성한 파일의 내용을 표시한다.
         NSLog(@"%@", [NSString stringWithContentsOfFile:@"newfile2" encoding:NSUTF8StringEncoding error:NULL]);
+        
+        
+        //데이터를 버퍼에 저장할 경우, NSData , NSMutableData를 이용할 수 있다.
+        NSData *fileData;
+        
+        fileData = [fm contentsAtPath:@"newfile2"];
+        
+        //newfile2 파일을 읽는다.
+        if (fileData == nil) {
+            NSLog(@"File read failed!");
+            return 7;
+        }
+        
+        //newfile3에 데이터를 기록한다.
+        if ([fm createFileAtPath:@"newfile3" contents:fileData attributes:nil] == NO) {
+            NSLog(@"Couldn't create the copy");
+            return 8;
+        }
+        
+        NSLog(@"File copy was successful!");
     }
     return 0;
 }
