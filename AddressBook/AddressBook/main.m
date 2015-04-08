@@ -13,13 +13,17 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSString *aName = @"Julia Kochan";
         NSString *aEmail = @"jewls337@axlc.com";
+        NSString *bName = @"Tonny Iannino";
+        NSString *bEmail = @"tony.iannino@techfitness.com";
+        
         AddressCard * card1 = [[AddressCard alloc]init];
-        card1.name = @"test";
+        AddressCard * card2 = [[AddressCard alloc]init];
 
-        [card1 setName: aName];
-        [card1 setEmail : aEmail];
+        [card1 setName: aName andEmail:aEmail];
+        [card2 setName:bName andEmail:bEmail];
         
         [card1 print];
+        [card2 print];
     }
     return 0;
 }
