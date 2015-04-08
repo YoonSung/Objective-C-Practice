@@ -14,7 +14,8 @@ int main(int argc, const char * argv[]) {
         NSString *aName = @"Julia Kochan";
         NSString *aEmail = @"jewls337@axlc.com";
         AddressCard * card1 = [[AddressCard alloc]init];
-        
+        card1.name = @"test";
+
         [card1 setName: aName];
         [card1 setEmail : aEmail];
         
