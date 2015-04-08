@@ -29,6 +29,8 @@ int main(int argc, const char * argv[]) {
         //주소록 카드를 새로 만든다.
         AddressBook *myBook = [[AddressBook alloc] initWithName:@"Linda's Address Book"];
         
+        AddressCard *myCard;
+        
         NSLog(@"Entires in address book after creation : %i", [myBook entries]);
         
         //주소 카드를 네 개 만든다.
@@ -47,6 +49,26 @@ int main(int argc, const char * argv[]) {
         
         //주소록의 모든 항목을 나열한다.
         [myBook list];
+        
+        
+        //이름으로 사람을 찾는다.
+        NSLog(@"Stephen Kochan");
+        myCard = [myBook lookup:@"stephen kochan"];
+        
+        if (myCard != nil)
+            [myCard print];
+        else
+            NSLog(@"Not found");
+        
+        //다른 검색 시도
+        NSLog(@"Haibo Zhang");
+        myCard = [myBook lookup:@"Haibo Zhang"];
+        
+        if (myCard != nil)
+            [myCard print];
+        else
+            NSLog(@"Not found");
+        
     }
     return 0;
 }
