@@ -47,23 +47,12 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"Entires in address book after adding card: %i", [myBook entries]);
         
-        //주소록의 모든 항목을 나열한다.
+        //정렬되지 않은 주소록을 나열한다.
         [myBook list];
         
-        
-        //이름으로 사람을 찾는다.
-        NSLog(@"Stephen Kochan");
-        myCard = [myBook lookup:@"stephen kochan"];
-        
-        if (myCard != nil)
-            [myCard print];
-        else
-            NSLog(@"Not found");
-        
-        //주소록에서 항목을 제거한다.
-        [myBook removeCard:myCard];
-        [myBook list]; //제거되었는지 확인한다.
-        
+        //정렬하고 다시 나열한다.
+        [myBook sort];
+        [myBook list];
     }
     return 0;
 }

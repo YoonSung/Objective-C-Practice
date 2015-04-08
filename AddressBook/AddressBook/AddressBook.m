@@ -7,6 +7,7 @@
 //
 
 #import "AddressBook.h"
+#import "AddressCard.h"
 
 @implementation AddressBook
 
@@ -63,6 +64,11 @@
         if ([nextCard.name caseInsensitiveCompare:theName] == NSOrderedSame)
             return nextCard;
     return nil;
+}
+
+-(void) sort
+{
+    [book sortUsingSelector: @selector(compareNames:)];
 }
 
 @end

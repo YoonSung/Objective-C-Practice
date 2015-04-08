@@ -20,5 +20,6 @@
 - (int)entries;
 - (void)list;
 - (AddressCard *) lookup: (NSString *) theName;
+- (void)sort;
 
 @end

@@ -47,4 +47,9 @@
         return NO;
 }
 
+-(NSComparisonResult) compareNames: (id) element
+{
+    return [_name compare: [element name]];
+}
+
 @end

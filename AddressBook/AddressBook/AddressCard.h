@@ -19,5 +19,6 @@
 
 -(void)print;
 -(void)setName: (NSString *)theName andEmail: (NSString *)theEmail;
+-(NSComparisonResult) compareNames: (id) element;
 
 @end
