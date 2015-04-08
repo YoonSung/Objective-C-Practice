@@ -77,6 +77,19 @@
         return nil;
 }
 
+-(NSIndexSet *) lookupAll:(NSString *)theName
+{
+    NSIndexSet * result = [book indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        if ([[obj name] caseInsensitiveCompare:theName] == NSOrderedSame)
+            return YES; //일치하는 값을 찾음. 계속 진행
+        else
+            return NO; //계속 찾음
+    }];
+    
+    //결과를 반환
+    return result;
+}
+
 -(void) sort
 {
     [book sortUsingSelector: @selector(compareNames:)];
