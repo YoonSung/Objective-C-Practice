@@ -16,13 +16,15 @@
 
 -(void) setName:(NSString *)theName
 {
-    name = [NSString stringWithString:theName];
+    if (name != theName)
+        name = [NSString stringWithString:theName];
 }
 
 -(void) setEmail:(NSString *)theEmail
 {
     //email = theEmail -- 이 방식은 자신의 멤버 객체를 소유하지 않고, 참조를 가지게 된다. 좋은방법이 아니다.
-    email = [NSString stringWithString:theEmail];
+    if (email != theEmail)
+        email = [NSString stringWithString:theEmail];
 }
 
 -(NSString *) email
