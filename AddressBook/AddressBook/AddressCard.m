@@ -35,4 +35,16 @@
     NSLog(@"====================================");
 }
 
+-(BOOL)isEqual:(AddressCard *)theCard
+{
+    if (
+        [_name isEqualToString:theCard.name] == YES
+        &&
+        [_email isEqualToString:theCard.email] == YES
+        )
+        return YES;
+    else
+        return NO;
+}
+
 @end

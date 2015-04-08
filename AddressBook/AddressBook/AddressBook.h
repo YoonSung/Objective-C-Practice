@@ -16,6 +16,7 @@
 
 - (id)initWithName: (NSString *)name;
 - (void)addCard: (AddressCard *)theCard;
+- (void) removeCard: (AddressCard *)theCard;
 - (int)entries;
 - (void)list;
 - (AddressCard *) lookup: (NSString *) theName;

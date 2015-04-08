@@ -60,14 +60,9 @@ int main(int argc, const char * argv[]) {
         else
             NSLog(@"Not found");
         
-        //다른 검색 시도
-        NSLog(@"Haibo Zhang");
-        myCard = [myBook lookup:@"Haibo Zhang"];
-        
-        if (myCard != nil)
-            [myCard print];
-        else
-            NSLog(@"Not found");
+        //주소록에서 항목을 제거한다.
+        [myBook removeCard:myCard];
+        [myBook list]; //제거되었는지 확인한다.
         
     }
     return 0;

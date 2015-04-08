@@ -34,6 +34,14 @@
     [book addObject:theCard];
 }
 
+-(void) removeCard:(AddressCard *)theCard
+{
+    //[book removeObjectIdenticalTo:theCard]; 메모리상의 위치를 기준으로 삭제
+    
+    //isEqual을 기준으로 삭제
+    [book removeObject:theCard];
+}
+
 -(int) entries
 {
     return (int)[book count];
